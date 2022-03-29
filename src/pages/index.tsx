@@ -4,7 +4,7 @@ import { Test } from '@/component/Test/Test'
 export const Home = () => (
   <>
     <Head>
-      <title>NeStarK</title>
+      <title>{process.env.NEXT_PUBLIC_APP_NAME}</title>
       <meta name="description" content="Nextjs Starter Kit" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
