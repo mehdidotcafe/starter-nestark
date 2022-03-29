@@ -5,3 +5,4 @@
 - react-intl
 - jest
 - eslint
+- husky & lint-staged
