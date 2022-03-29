@@ -12,7 +12,7 @@ export const Test = () => {
     <>
       <Container>{messages.hello}</Container>
       <div>
-        <button type="submit" onClick={() => setLocale(locale === 'fr' ? 'en' : 'fr')}>Change locale</button>
+        <button type="submit" onClick={() => setLocale(locale === 'fr' ? 'en' : 'fr')}>Update</button>
       </div>
     </>
   )
