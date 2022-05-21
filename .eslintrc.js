@@ -11,6 +11,7 @@ module.exports = {
     'airbnb',
     'airbnb-typescript',
   ],
+  plugins: ['simple-import-sort'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.eslint.json',
@@ -30,6 +31,8 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
   settings: {
     react: {

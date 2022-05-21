@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { useIntl } from '@/provider/IntlProvider'
 
 const Container = styled.h2`

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 import { Test } from '@/component/Test/Test'
 
 export const Home = () => (

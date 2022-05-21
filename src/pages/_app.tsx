@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
-import { Locale, IntlProvider } from '@/provider/IntlProvider'
+import { IntlProvider, Locale } from '@/provider/IntlProvider'
 import { GlobalStyle } from '@/style/GlobalStyle'
 
 export const App = ({ Component, pageProps }: AppProps) => {

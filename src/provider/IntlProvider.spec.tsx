@@ -1,13 +1,13 @@
-import { render, waitFor } from '@testing-library/react'
-import { renderHook, act } from '@testing-library/react-hooks'
 import '@testing-library/jest-dom'
 
-import {
-  IntlProvider, useIntl, Locale, allowedLocales, defaultAllowedLocale,
-} from '@/provider/IntlProvider'
+import { render, waitFor } from '@testing-library/react'
+import { act, renderHook } from '@testing-library/react-hooks'
 
 import messagesEn from '@/lang/en.json'
 import messagesFr from '@/lang/fr.json'
+import {
+  allowedLocales, defaultAllowedLocale, IntlProvider, Locale, useIntl,
+} from '@/provider/IntlProvider'
 
 const testKey = 'hello'
 
