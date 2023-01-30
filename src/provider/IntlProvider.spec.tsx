@@ -1,7 +1,11 @@
 import '@testing-library/jest-dom'
 
-import { render, waitFor } from '@testing-library/react'
-import { act, renderHook } from '@testing-library/react-hooks'
+import {
+  act,
+  render,
+  renderHook,
+  waitFor,
+} from '@testing-library/react'
 
 import messagesEn from '@/lang/en.json'
 import messagesFr from '@/lang/fr.json'
@@ -11,7 +15,7 @@ import {
 
 const testKey = 'hello'
 
-function TestComponent({ localeToSet }: { localeToSet: Locale }) {
+const TestComponent = ({ localeToSet }: { localeToSet: Locale }) => {
   const { messages, setLocale } = useIntl()
 
   return (
@@ -30,14 +34,6 @@ const renderComponent = (defaultLocaleProvider?: Locale, localeToSet?: Locale) =
 
 describe('IntlProvider', () => {
   describe('with fake consumer component', () => {
-    it('should render', async () => {
-      const { container } = renderComponent()
-
-      await waitFor(() => {
-        expect(container).toBeInTheDocument()
-      })
-    })
-
     it(`should use default locale (${defaultAllowedLocale})`, async () => {
       const { getByText } = renderComponent()
 
@@ -62,7 +58,9 @@ describe('IntlProvider', () => {
       })
 
       // Set locale to fr
-      getByRole('button').click()
+      act(() => {
+        getByRole('button').click()
+      })
 
       await waitFor(() => {
         // Displayed text should now be french

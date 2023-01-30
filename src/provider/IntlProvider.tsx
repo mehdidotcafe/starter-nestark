@@ -1,5 +1,5 @@
 import {
-  createContext, PropsWithChildren, useContext, useEffect, useState,
+  createContext, PropsWithChildren, useContext, useEffect, useMemo, useState,
 } from 'react'
 import { IntlProvider as ReactIntlProvider } from 'react-intl'
 
@@ -26,6 +26,11 @@ export const IntlProvider = ({
 }: PropsWithChildren<IntlContextProps>) => {
   const [messages, setMessages] = useState<IntlMessages>()
   const [locale, setLocale] = useState<Locale>(defaultLocale)
+  const value = useMemo(() => ({
+    locale,
+    messages,
+    setLocale,
+  }), [locale, messages])
 
   useEffect(() => {
     import(`../lang/${locale}.json`).then(setMessages)
@@ -33,7 +38,7 @@ export const IntlProvider = ({
 
   return messages ? (
     <ReactIntlProvider locale={locale} messages={messages}>
-      <IntlContext.Provider value={{ locale, messages, setLocale }}>
+      <IntlContext.Provider value={value}>
         {children}
       </IntlContext.Provider>
     </ReactIntlProvider>

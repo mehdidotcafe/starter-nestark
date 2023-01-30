@@ -33,6 +33,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    '@typescript-eslint/no-use-before-define': ['error', { functions: false, variables: false }],
+    'react/function-component-definition': ['error', { namedComponents: 'arrow-function' }],
   },
   settings: {
     react: {
