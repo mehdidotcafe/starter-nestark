@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --ext .tsx,.ts,.js --fix",
     "lint-staged": "lint-staged",
     "test:e2e": "dotenv -- bash -c 'cypress open --e2e'",
-    "test:e2e:ci": "dotenv -- bash -c 'start-server-and-test dev $APP_URL \"cypress run --e2e\"'",
+    "test:e2e:ci": "dotenv -e .env.test -- bash -c 'start-server-and-test dev $APP_URL \"cypress run --e2e\"'",
     "test": "jest --watchAll",
     "test:ci": "jest --coverage",
     "prepare": "husky install"
