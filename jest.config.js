@@ -9,9 +9,7 @@ module.exports = {
     '^.+\\.tsx?$': [
       'ts-jest',
       {
-        tsconfig: {
-          jsx: 'react-jsx',
-        },
+        tsconfig: 'tsconfig.jest.json',
       },
     ],
   },
