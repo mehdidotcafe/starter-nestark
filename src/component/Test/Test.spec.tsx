@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom'
+
 import { Test } from './Test'
 
 const renderComponent = () => <Test />

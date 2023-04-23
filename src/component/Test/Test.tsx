@@ -11,6 +11,7 @@ export const Test = () => {
 
   return (
     <>
+      <h1>Nestark</h1>
       <Container>{messages.hello}</Container>
       <div>
         <button type="submit" onClick={() => setLocale(locale === 'fr' ? 'en' : 'fr')}>Change locale</button>
